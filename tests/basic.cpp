@@ -1,5 +1,5 @@
-#include "tmpl-tests.h"
-#include "template.h"
+#include "tlgr-tests.h"
+#include "tlgr.h"
 
 TEST(InitTerminate, Basic, 0.0f,
      // initialisation
@@ -8,15 +8,15 @@ TEST(InitTerminate, Basic, 0.0f,
      },
      // cleanup
      {
-	 tmplTerminateContext(&m_data.context);
+	 tlgrTerminateContext(&m_data.context);
      },
      // test
      {
-	 ASSERT(m_data.context = tmplInitContext());
-	 ASSERT(tmplTerminateContext(&m_data.context) == TMPL_SUCCESS);
+	 ASSERT(m_data.context = tlgrInitContext());
+	 ASSERT(tlgrTerminateContext(&m_data.context) == TLGR_SUCCESS);
      },
      // data
      {
-	 tmplContext* context;
+	 tlgrContext* context;
      }
     );

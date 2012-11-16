@@ -1,10 +1,10 @@
-solution "template"
+solution "tlgr"
 language "C++"
 configurations { "Debug", "Release" }
 includedirs { "include", "src/include" }
 files { "include/**.h" }
 
-defines { "TMPL_BUILD" }
+defines { "TLGR_BUILD" }
 
 configuration "Debug"
 defines { "DEBUG" }
@@ -19,19 +19,19 @@ flags { "OptimizeSpeed",
 	"NoFramePointer" }
 targetdir "build/release"
 
-project "template"
+project "tlgr"
 kind "StaticLib"
 files { "src/**.c", "src/**.cpp" }
 
-project "template-dynamic"
+project "tlgr-dynamic"
 kind "SharedLib"
 files { "src/**.c", "src/**.cpp" }
-targetname "template"
+targetname "tlgr"
 
 project "tests"
 kind "ConsoleApp"
 files { "tests/**.cpp" }
-links { "template" }
+links { "tlgr" }
 configuration "Debug"
 postbuildcommands("build/debug/tests")
 configuration "Release"
